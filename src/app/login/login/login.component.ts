@@ -42,8 +42,6 @@ export class LoginComponent implements OnInit,OnDestroy {
     
     this.AuthService$
       .login(value.username,value.password)
-      .subscribe(res => this.router.navigateByUrl('/dashboard') ,(error)=>{
-          showNotification('top','right','danger',`${error.msg}${error.error_code}`);
-      });
+      .subscribe(res => this.router.navigateByUrl('/dashboard'));
   }
 }

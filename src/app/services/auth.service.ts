@@ -1,8 +1,9 @@
 import { Auth } from '../domain/auth.model';
 import { Headers, Http } from '@angular/http';
 import { Injectable, Inject } from '@angular/core';
-import { User,Err } from "../domain/index";
+import { User } from "../domain/index";
 import { Observable } from "rxjs/Observable";
+import { httpError } from "./base.service";
 
 @Injectable()
 export class AuthService {
@@ -25,10 +26,6 @@ export class AuthService {
             .post(uri, {'ac': username, 'se': password})
             .map(res => {
                 return res.json();
-            })
-            .catch(this.handleErrorObservable)
-    }
-    private handleErrorObservable (error: Response | any) {
-        return Observable.throw(error.json() as Err);
+            }).catch(httpError)
     }
 }

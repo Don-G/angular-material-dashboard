@@ -1,4 +1,5 @@
 declare const $: any;
+
 export const showNotification = (
     from: string,
     align: string,
