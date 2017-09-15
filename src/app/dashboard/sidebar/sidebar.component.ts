@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, OnInit, OnDestroy} from '@angular/core';
-import { SettingsService } from '../services/settings.service';
+import { SettingsService } from '../../services/settings.service';
 import { ROUTES } from './sidebar-routes.config';
 
 @Component({

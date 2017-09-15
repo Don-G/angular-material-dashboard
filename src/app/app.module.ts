@@ -1,13 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { CoreModule } from './core/core.module';
-import { LoginModule } from './login/login.module';
+import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
-import { SettingsService } from './services/settings.service';
+
+import { LoginModule } from './login/login.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 @NgModule({
 
 
@@ -16,13 +15,13 @@ import { SettingsService } from './services/settings.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
+    SharedModule,
     CoreModule,
     LoginModule,
-    AppRoutingModule
+    DashboardModule,
+    AppRoutingModule,
   ],
-  providers: [SettingsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
