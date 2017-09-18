@@ -1,19 +1,43 @@
+import { Injectable } from '@angular/core';
 import { Err } from "../domain/index";
 import { Observable } from "rxjs/Observable";
 import { showNotification } from '../utils/base.util';
+import { LocalStorage } from '../core/common/local.storage';
 
-export const httpError = (error: Response | any) => {
-    const err = error.json();
-    const msg = "";
-    switch(error.status)
-    {
-        case 401:
-        this.msg = "用户授权失败";
-        break;
-        default:
-        this.msg = err.msg;
+
+@Injectable()
+export class BaseService{
+
+    constructor(
+        private ls: LocalStorage
+    ){
+
     }
-    showNotification('top','right','danger',`${this.msg}`);
 
-    return Observable.throw(err as Err);
+    httpError(error: Response | any){
+        const err = error.json();
+        switch(err.error_code)
+        {
+            case 10004:
+            err.msg = "用户名或密码错误";
+            showNotification('top','right','danger',`${err.msg}`);
+            break;
+            default:
+        }
+        return Observable.throw(err as Err);
+    }
+
+    setToken(token){
+        this.ls.set('token',token);
+        return;
+    }
+
+    getToken(){
+        return this.ls.get('token');
+    }
+
+    removeToken(){
+        this.ls.remove('token');
+        return;
+    }
 }

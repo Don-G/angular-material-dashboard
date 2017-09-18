@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit,OnDestroy {
     private fb: FormBuilder,
     private dialog: MdDialog,
     private AuthService$: AuthService,
-    private router: Router) { }
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -42,6 +43,6 @@ export class LoginComponent implements OnInit,OnDestroy {
     
     this.AuthService$
       .login(value.username,value.password)
-      .subscribe(res => this.router.navigateByUrl('/dashboard'));
+      .subscribe(res => this.router.navigate(['/', 'dashboard']));
   }
 }

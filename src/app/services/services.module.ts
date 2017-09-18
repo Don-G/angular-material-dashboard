@@ -1,7 +1,7 @@
 
-
 import { SettingsService } from './settings.service';
 import { AuthService } from './auth.service';
+import { BaseService } from './base.service';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 
 
@@ -12,7 +12,8 @@ export class ServicesModule {
       ngModule: ServicesModule,
       providers: [
         AuthService,
-        SettingsService
+        SettingsService,
+        BaseService
       ]
     }
   }

@@ -9,7 +9,7 @@
       <button md-icon-button [mdMenuTriggerFor]="personMenu"><i class="material-icons icon-btn">person</i></button>
       <md-menu #personMenu="mdMenu">
         <button md-menu-item>修改密码</button>
-        <button md-menu-item>退出登录</button>
+        <button md-menu-item (click)="outLogin()">退出登录</button>
       </md-menu>
     </div>
     <div id="menu">

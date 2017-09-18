@@ -7,6 +7,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { loadSvgResources } from '../utils/svg.util';
 import { SharedModule } from '../shared/shared.module';
 
+import { LocalStorage } from './common/local.storage';
+
 import 'hammerjs';
 import 'rxjs/add/operator/take';
 import '../utils/debug.util';
@@ -25,12 +27,13 @@ import '../utils/debug.util';
     HttpModule,  
   ],
   providers: [
+    LocalStorage,
     {
       provide: 'BASE_CONFIG',
       useValue: {
         uri: 'http://tp5.cn/api/v1'
       }
-    }
+    },
   ]
 })
 
