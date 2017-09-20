@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MdDialog } from '@angular/material';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NavbarComponent implements OnInit {
   @Input() title: string;
   constructor(
+    private dialog: MdDialog
   ) {}
 
   ngOnInit() {
@@ -18,6 +21,10 @@ export class NavbarComponent implements OnInit {
 
   outLogin(){
     window.location.href="/login";
+  }
+
+  onEditClick(){
+    const dialogRef = this.dialog.open(ProfileComponent,{});
   }
 
 }

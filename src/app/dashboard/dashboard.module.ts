@@ -9,6 +9,8 @@ import { FigurecardComponent } from './figurecard/figurecard.component';
 import { FooterComponent } from './footer/footer.component';
 import { ImagecardComponent } from './imagecard/imagecard.component';
 import { HomeComponent } from './home/home.component';
+import { SettingsComponent } from './settings/settings.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
@@ -24,6 +26,8 @@ import { HomeComponent } from './home/home.component';
     FigurecardComponent,
     FooterComponent,
     ImagecardComponent,
+    SettingsComponent,
+    ProfileComponent,
   ]
 })
 export class DashboardModule { }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { CustomFormsModule } from "ng2-validation";
 import { 
   MdButtonModule, 
   MdRadioModule, 
@@ -32,6 +33,7 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/count';
 
+
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 @NgModule({
   imports: [
@@ -45,6 +47,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     FormsModule,
     ReactiveFormsModule,
     MdDialogModule,
+    CustomFormsModule,
   ],
   exports: [
     CommonModule,
@@ -57,6 +60,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     FormsModule,
     ReactiveFormsModule,
     MdDialogModule,
+    CustomFormsModule,
   ],
   declarations: [
     ConfirmDialogComponent 

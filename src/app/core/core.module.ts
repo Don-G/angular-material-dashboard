@@ -10,6 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 import { LocalStorage } from './common/local.storage';
 
 import 'hammerjs';
+import { CustomFormsModule } from 'ng2-validation';
 import 'rxjs/add/operator/take';
 import '../utils/debug.util';
 
@@ -27,6 +28,7 @@ import '../utils/debug.util';
     HttpModule,  
   ],
   providers: [
+    CustomFormsModule,
     LocalStorage,
     {
       provide: 'BASE_CONFIG',
