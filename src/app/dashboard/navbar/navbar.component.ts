@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MdDialog } from '@angular/material';
+import { Router } from '@angular/router';
 import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
@@ -10,7 +11,8 @@ import { ProfileComponent } from '../profile/profile.component';
 export class NavbarComponent implements OnInit {
   @Input() title: string;
   constructor(
-    private dialog: MdDialog
+    private dialog: MdDialog,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -20,7 +22,7 @@ export class NavbarComponent implements OnInit {
   }
 
   outLogin(){
-    window.location.href="/login";
+    this.router.navigate(['/', 'login'])
   }
 
   onEditClick(){

@@ -4,9 +4,9 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginModule } from './login';
+import { HashLocationStrategy,LocationStrategy } from '@angular/common';
 
-import { LoginModule } from './login/login.module';
-import { DashboardModule } from './dashboard/dashboard.module';
 @NgModule({
 
 
@@ -18,10 +18,14 @@ import { DashboardModule } from './dashboard/dashboard.module';
     SharedModule,
     CoreModule,
     LoginModule,
-    DashboardModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
